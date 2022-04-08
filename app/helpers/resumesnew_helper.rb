@@ -1,0 +1,2 @@
+module ResumesnewHelper
+end

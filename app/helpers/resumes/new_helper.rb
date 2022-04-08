@@ -1,0 +1,2 @@
+module Resumes::NewHelper
+end
