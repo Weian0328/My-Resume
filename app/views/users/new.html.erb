@@ -1,0 +1,27 @@
+<h1>會員註冊</h1>
+
+<%= form_with(model: @user, url:"/users", method: "post") do |form| %>
+
+    <div class="field">
+        <%= form.label :email %>
+        <%= form.email_field :email %>
+    </div>
+
+    <div class="field">
+        <%= form.label :username %>
+        <%= form.text_field :username %>
+    </div>
+
+    <div class="field">
+        <%= form.label :password %>
+        <%= form.password_field :password %>
+    </div>
+
+    <div class="field">
+        <%= form.label :password_confirmation %>
+        <%= form.password_field :password_confirmation %>
+    </div>
+     
+     <%= form.submit "註冊"%>
+
+<% end %>

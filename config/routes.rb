@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
-# root "welcome#index"
 
-get "/" ,to:"welcome#index"
-get "/resumes/new", to:"resumes#new", as: "new_resume"
-get "/resumes", to:"resumes#index"
-post"/resumes", to:"resumes#create"
+resources :resumes
+
+get"/users/sign_up", to: "users#new"
+
+
+
+
+
+get "/" ,to:"resumes#index"
+# root "resumes#index"
+
 post "/", to:"welcome#index" 
 
 end

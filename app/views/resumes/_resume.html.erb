@@ -1,3 +1,8 @@
 <li>
-    <%= resume.title %>
+  <%= link_to resume.title, resume_path(id: resume.id)%>
+    |
+  <%= link_to "X" , resume_path(resume), method: :delete, data:{
+      confirm: "確定嗎?"
+  } %>
 </li>
+

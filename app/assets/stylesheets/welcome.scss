@@ -26,3 +26,20 @@
 .flash-notice {
   background-color: aqua;
 }
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  font-size: 22px;
+  background-color: papayawhip;
+  border-radius: 10px;
+  padding: 6px;
+  margin: 6px;
+  align-items: center;
+}
+
+nav li {
+  margin-right: 20px;
+  border-radius: 10px;
+  font-size: 20px;
+}

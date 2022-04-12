@@ -1,0 +1,22 @@
+<%= form_with(model: resume) do |form| %>
+   
+   <div class="fields">
+        <%= form.label :title ,"標題" %>
+        <%= form.text_field :title, autocomplete: "off", autofocus: true %>
+   </div>
+   
+   <div class="fields">
+        <%= form.label :titl,"內容" %>
+        <%= form.text_area :content %>
+   </div>
+
+   <div class="fields">
+        <%= form.label :titl,"狀態" %>
+        <%= form.select :status, Resume.all_status %>
+   </div>
+   
+    <%= form.submit %>
+
+<% end %>
+
+
