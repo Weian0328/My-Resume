@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
 
-resources :resumes
-
+resources :resumes do
+  collection do
+    get :my
+  end
+end
 resource :users, only: [:create] do
   get :sign_up
   get :sign_in
 end
 
-resources :sessions, only: [:create, :destroy]
+resource :sessions, only: [:create, :destroy]
 
 # get"/users/sign_up", to: "users#new"
 

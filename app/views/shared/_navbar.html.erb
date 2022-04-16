@@ -1,8 +1,14 @@
 <nav>
-    <div>會員專區</div>
+    <div><%= link_to 'Resume', root_path %></div>
     <ul>
+        <% if user_signed_in? %>
+        <li><%= current_user.email %></li>
+        <li><%= link_to "我的履歷", my_resumes_path %></li>
+        <li><%= link_to "登出", sessions_path, method: "delete" %></li>
+        <% else %>
         <li><%=link_to "註冊", sign_up_users_path %></li>
         <li><%=link_to "登入", sign_in_users_path %></li>
+        <% end %>
     </ul>
 </nav>
     

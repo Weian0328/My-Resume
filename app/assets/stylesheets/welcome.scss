@@ -22,7 +22,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 4px, 10px;
-  border-radius: 4px;
+  border-radius: 10px;
 }
 
 .flash-notice {
@@ -49,5 +49,9 @@ nav li {
 }
 
 li a {
+  margin: auto;
+}
+
+div a {
   margin: auto;
 }
