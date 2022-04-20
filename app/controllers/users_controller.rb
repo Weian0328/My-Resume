@@ -16,6 +16,10 @@ class UsersController < ApplicationController
         end
     end
 
+    def default_resume
+        @user = User.find_by!(username: params[:user_id])
+        @resume = @user.default_resume
+    end
     private
 
     def user_params

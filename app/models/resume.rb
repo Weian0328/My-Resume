@@ -1,4 +1,7 @@
 class Resume < ApplicationRecord
+    extend FriendlyId
+    friendly_id :random_slug, use: :slugged
+
     # validations
     validates :title, presence: true
     validates :content, presence: true
@@ -13,7 +16,11 @@ class Resume < ApplicationRecord
     def self.all_status
         [
             ["草稿","draft"],
-            ["發佈","published"],
+            ["公開","published"],
         ]
+    end
+    private
+    def random_slug
+        [*'a'..'z',*'0'..'9',"-","_"].sample(10).join
     end
 end

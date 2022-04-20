@@ -1,16 +1,25 @@
 Rails.application.routes.draw do
 
-resources :resumes do
-  collection do
-    get :my
-  end
-end
-resource :users, only: [:create] do
-  get :sign_up
-  get :sign_in
-end
+  get "/@:user_id", to: "users#default_resume"
+  get "/@:user_id/:id", to: "resumes#show", as: "user_resume"
 
-resource :sessions, only: [:create, :destroy]
+
+  resources :resumes do
+    collection do
+      get :my
+    end
+
+    member do
+      patch :pin
+    end
+  end
+  
+  resource :users, only: [:create] do
+    get :sign_up
+    get :sign_in
+  end
+
+  resource :sessions, only: [:create, :destroy]
 
 # get"/users/sign_up", to: "users#new"
 
