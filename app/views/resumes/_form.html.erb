@@ -4,6 +4,11 @@
         <%= form.label :title ,"標題" %>
         <%= form.text_field :title, autocomplete: "off", autofocus: true %>
    </div>
+
+   <div class="fields">
+        <%= form.label :mugshot ,"照片" %>
+        <%= form.file_field :mugshot %>
+   </div>
    
    <div class="fields">
         <%= form.label :content,"內容" %>

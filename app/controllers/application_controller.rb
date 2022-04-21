@@ -1,7 +1,11 @@
 class ApplicationController < ActionController::Base
     rescue_from ActiveRecord::RecordNotFound, with: :not_found
+    rescue_from Pundit::NotAuthorizedError, with: :not_found
+
+    include Pundit::Authorization
 
     helper_method :user_signed_in?, :current_user
+
     private
     def user_signed_in?
       session[:thankyou9527].present?

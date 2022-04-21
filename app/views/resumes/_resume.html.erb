@@ -2,10 +2,10 @@
   <%= "v" if resume.pinned %>
   <%= link_to resume.title, user_resume_path(user_id: resume.user.username, id: resume.slug) %>
     | 
-    <%= link_to "預設", pin_resume_path(resume), method: :patch %>
+    <%= link_to "預設", pin_resume_path(resume), method: :patch if policy(resume).edit? %>
     |
   <%= link_to "X" , resume_path(resume), method: :delete, data:{
       confirm: "確定嗎?"
-  } %>
+  } if policy(resume).destroy? %>
 </li>
 

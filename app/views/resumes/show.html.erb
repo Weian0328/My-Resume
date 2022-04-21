@@ -2,5 +2,7 @@
 
 <%= link_to "修改" , edit_resume_path(@resume) %>
 
+<%= image_tag @resume.mugshot if @resume.mugshot.attached? %>
+
 <%= markdown(@resume.content) %>
 

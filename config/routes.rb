@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       patch :pin
     end
   end
-  
+
   resource :users, only: [:create] do
     get :sign_up
     get :sign_in
@@ -21,7 +21,9 @@ Rails.application.routes.draw do
 
   resource :sessions, only: [:create, :destroy]
 
-# get"/users/sign_up", to: "users#new"
+  namespace :admin do
+    resources :vendors, expect: [:show]
+  end
 
 
 post "/", to:"welcome#index" 

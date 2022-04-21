@@ -4,7 +4,7 @@ class ResumesController < ApplicationController
     before_action :authenticate_user, expect: [:index, :show]
 
     def index
-        @resumes = Resume.published
+        @resumes = authorize Resume.published
     end
 
     def new
@@ -56,7 +56,7 @@ class ResumesController < ApplicationController
 
     private
       def resume_params
-        params.require(:resume).permit(:title, :content, :status)
+        params.require(:resume).permit(:title, :content, :status, :mugshot)
       end
 
       def find_resume
